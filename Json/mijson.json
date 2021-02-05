@@ -1,0 +1,175 @@
+{
+  "Curriculum": {
+    "Sobremi": {
+      "nombre": "Rafael",
+      "apellidos": "Salmerón Martos",
+      "nacionalidad": "España",
+      "nationality": "Spanish",
+      "nacimiento": "23/12/2000",
+      "direccion": "Av/ Francisco José Contreras Ruiz, 18210 Peligros (España)",
+      "address": "Av/ Francisco José Contreras Ruiz, 18210 Peligros (Spain)",
+      "correo": "rafikisalmeronmartos@gmail.com",
+      "telefono": "615026527",
+      "redes": {
+        "insta": "https://www.instagram.com/rafikii.sm/",
+        "linkedin": "https://www.linkedin.com/in/RafaelSalmeronMartos",
+        "github": "https://github.com/RafikiSalmeron",
+        "twitter": "https://twitter.com/RafikiiSalmeron"
+      },
+      "presentacion": "Soy Rafael Salmerón, técnico superior en Desarrollo de Aplicaciones Multiplataforma. Cuento con experiencia en el trabajo de cara al público y trabajo en equipo, lo cual me ha permitido explorar mis capacidades para lograr un buen clima profesional. También he tenido la oportunidad de trabajar de manera independiente, aumentando mi eficiencia y capacidad para resolver problemas",
+      "presentation": "My name is Rafael Salmerón, specialist in Multi-platform Applications Development. I have experience in working with the public and also in team work, which has allowed me to explore my abilities for achieving a proper working atmosphere. Besides, I have had the opportunity to work independently, increasing my efficiency and ability to solve problems"
+    },
+    "Experienciaprofesional": [{
+        "puesto": "Técnico de hardware para pruebas y verificación de equipos informáticos (Prácticas)",
+	       "job": "Hardware technician for testing and verification of computer equipments (Practicing)",
+        "fechainicio": "02/03/2018",
+        "fechafin": "02/06/2018",
+        "descripcion": "Mantenimiento y reparación de dispositivos informáticos (ordenadores, impresoras, etc)",
+        "description": "Maintenance and reparation of computing devices (computers, printers, etc)"
+      },
+      {
+        "puesto": "Desarrollador web (Prácticas)",
+	       "job": "Web developer (Practicing)",
+        "fechainicio": "10/03/2020",
+        "fechafin": "08/05/2020",
+        "descripcion": "Adaptación de un proyecto web a una base de datos mediante un framework PHP (Codeigniter)",
+        "description": "Adaptation of a web project to a database by means of a PHP framework (Codeigniter)"
+      }
+    ],
+    "Estudios": [{
+        "nombre": "Educacion Obligatoria Secundaria",
+        "fecha": "22/06/2016",
+        "lugar": "IES Clara Campoamor"
+      },
+      {
+        "nombre": "Técnico en Sistemas Microinformáticos y Redes",
+        "fecha": "22/06/2018",
+        "lugar": "IES Padre Suárez"
+      },
+      {
+        "nombre": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma",
+        "fecha": "22/06/2020",
+        "lugar": "IES Francisco Ayala"
+      },
+      {
+        "nombre": "Técnico Superior en Desarrollo de Aplicaciones Web",
+        "fecha": "Actualmente",
+        "lugar": "IES Francisco Ayala"
+      }
+    ],
+    "Destrezas": [{
+        "habilidad": "Buenas competencias de comunicación adquiridas a través de mi experiencia como técnico informático y como voluntario en fiestas y eventos locales.",
+        "skill": "Proficiency in communication acquired through my experience as a computing technician and volunteer in local parties and events"
+      },
+      {
+        "habilidad": "Buenas capacidades organizativas adquiridas en las prácticas realizadas en las diferentes empresas.",
+        "skill": "Proficiency in organization acquired through the trainings performed in different companies"
+      }
+    ],
+    "Referencias": [{
+        "empresa": "Informática NoSoloPC",
+        "testimonio": "Muy bueno y competente en su trabajo",
+        "testimonioingles": "Capable and competent in his job"
+      },
+      {
+        "empresa": "Informatica Cano SL",
+        "testimonio": "Muy buena adaptación",
+        "testimonioingles": "Outstanding adaptation"
+      }
+    ],
+    "lenguajes": {
+      "lenguajes" : "JAVA, HTML, CSS, XML, XHTML, HML5, PYTHON, SHELL-LINUX, LUA, KOTLIN, JAVASCRIPT, JQUERY, VUE"
+    },
+    "Proyectos": [{
+        "proyecto": "Weather",
+        "img": "./img/weather.png",
+        "descripcion": "Este proyecto consiste en una página web, la cual rastrea tu ubicación y te muestra el tiempo aproximado que hará desde hoy a 16 días. Esto lo hace mediante una petición a una API",
+        "description": "This project consists of a website which tracks your location and shows you approximately what the weather will be like 16 days from now. This is done by means of a request to an API",
+        "repo": "https://github.com/RafikiSalmeron/Weather",
+        "produccion": "https://rafikisalmeron.github.io/Weather/",
+        "tecnologias": [{
+            "tecnologia": "JavaScript"
+          },
+          {
+            "tecnologia": "HTML5"
+          },
+          {
+            "tecnologia": "JSON"
+          },
+          {
+            "tecnologia": "CSS"
+          },
+          {
+            "tecnologia": "Bootstrap"
+          },
+          {
+            "tecnologia": "AJAX"
+          }
+        ]
+      },
+      {
+        "proyecto": "SuperPang",
+        "img": "./img/superpang.png",
+        "descripcion": "Este proyecto consiste en un juego 2D, basado en el clásico SuperPang pero hecho sólo con JavaScript. ",
+        "description": "This project consists of a 2D game, based on the classic SuperPang but done only with JavaScript",
+        "repo": "https://github.com/RafikiSalmeron/SuperPangChristmasEdition",
+        "produccion": "https://rafikisalmeron.github.io/SuperPangChristmasEdition/",
+        "tecnologias": [{
+            "tecnologia": "JavaScript"
+          },
+          {
+            "tecnologia": "CSS"
+          },
+          {
+            "tecnologia": "HTML"
+          }
+        ]
+      },
+      {
+        "proyecto": "LandingPage",
+        "img": "./img/landing.png",
+        "descripcion": "Este proyecto consiste en una Landing Page la cual te ofrece una especie de suscripción. El objetivo principal era utilizar JQuery en todo lo posible.",
+        "description": "This project consists of a Landing Page which offers you a subscription. The main purpose was to use JQuery as much as possible",
+        "repo": "https://github.com/RafikiSalmeron/LandingPage",
+        "produccion": "https://rafikisalmeron.github.io/LandingPage/",
+        "tecnologias": [{
+            "tecnologia": "JavaScript"
+          },
+          {
+            "tecnologia": "HTML5"
+          },
+          {
+            "tecnologia": "JSON"
+          },
+          {
+            "tecnologia": "CSS"
+          },
+          {
+            "tecnologia": "Bootstrap"
+          },
+          {
+            "tecnologia": "JQuery"
+          },
+          {
+            "tecnologia": "AJAX"
+          }
+        ]
+      }
+    ],
+    "Idiomas": [{
+        "lenguaje": "Español",
+        "language": "Spanish",
+        "nivel": "Nativo",
+        "level": "Native",
+        "porcentaje": "100"
+      },
+      {
+        "lenguaje": "Inglés",
+        "language": "English",
+        "nivel": "Intermedio",
+        "level": "Medium",
+        "porcentaje": "60"
+      }
+    ]
+  }
+}

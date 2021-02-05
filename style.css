@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  background-color: lightgray;
+  background-image: url("./img/background.jpg");
+  display: flex;
+  justify-content: center;
+}
+
+/* Contenedor principal */
+#app {
+  margin-top: 2rem;
+  background-color: white;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* h1 en el top de la página */
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Todos los h2 de la página */
+h2 {
+  margin-top: 2rem;
+}
+
+/* Menú superior */
+.navbar {
+  padding: 0;
+  padding-right: 1rem;
+}
+
+.navbar a {
+  padding: 1rem;
+}
+
+.navbar ul {
+  padding-left: 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(210, 210, 210);
+}
+
+.nav-item a {
+  border-radius: 1rem;
+}
+
+.nav-item a.active {
+  background-color: rgba(0, 0, 0, 0.57);
+}
+
+ul {
+  margin: 0;
+}
+
+/* Formulario de contacto */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.form-container {
+  display: inline-block;
+}
+
+form {
+  background-color: rgb(201, 213, 219, 0.3);
+  border-radius: 1rem;
+  font-size: 1em;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+form p {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-form {
+  width: 12rem;
+}
+
+input {
+  border: 0;
+  outline: none;
+  width: 20rem;
+}
+
+textarea {
+  width: 20rem;
+  resize: none;
+}
+
+.field {
+  border: solid 2px #ccc;
+  padding: 0.8rem;
+}
+
+.field:focus {
+  border-color: #18A383;
+}
+
+.center-content {
+  text-align: center;
+}
+
+#btn-submit:hover {
+  transform: scale(1.2);
+}
+
+/* Sección sobremi */
+#Sobre-mi {
+  position: relative;
+}
+
+.container-sobremi {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.imgFoto {
+  max-width: 9rem;
+  height: 10rem;
+  border-radius: 1rem;
+}
+
+.icono {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.icono i:hover {
+  transform: scale(1.4);
+}
+
+.imgPreload {
+  width: 100%;
+  height: 100%;
+}
+
+/* borde para todas las secciones */
+#Sobre-mi,
+.Experiencia,
+.Educacion,
+.Idiomas,
+.Proyectos,
+.Destrezas,
+.Contacto,
+.Referencias {
+  border: solid 1px black;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* Tabla de estudios */
+.Educacion table {
+  text-align: center;
+  display: flex;
+  border-collapse: collapse;
+  justify-content: center;
+}
+
+.Educacion table tr td,
+.Educacion table tr th {
+  border: solid 1px black;
+  padding: 0.5rem;
+}
+
+/* Color de progress bar */
+.progress-bar {
+  background-color: rgba(0, 0, 0, 0.88);
+}
+
+/* Sección de proyectos */
+.Proyectos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Tarjetas para proyectos y referencias */
+.card {
+  width: 15rem;
+  margin-bottom: 2rem;
+}
+
+.card img {
+  height: 10rem;
+}
+
+.btnCard {
+  width: 100%;
+}
+
+.card-body {
+  text-align: justify;
+}
+
+/* Contenido del modal */
+h5 {
+  text-align: center;
+  width: 100%;
+}
+
+.imgProyectoModal {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.modal-body h5 {
+  margin-top: 1rem;
+}
+
+#descripcionParrafo, #descriptionParrafo {
+  text-align: justify;
+  padding: 1rem;
+}
+
+/* Sección de referencias */
+.Referencias {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cardReferencia {
+  min-height: 12rem;
+}
+
+.bodyReferencia {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-company-name {
+  margin-top: 1rem;
+}
+
+/* Pantallas tipo tablet (SM) */
+@media screen and (min-width: 768px) {
+  .container-sobremi {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+  }
+
+  #app {
+    width: 90%;
+  }
+}
+
+/* Pantallas medias (MD) */
+@media screen and (min-width: 992px) {
+  .container-sobremi {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+  }
+
+  #app {
+    width: 80%;
+  }
+
+  .card {
+    margin: 0;
+  }
+}

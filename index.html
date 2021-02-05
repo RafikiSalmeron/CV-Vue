@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum</title>
+
+  <link rel="shortcut icon" href="./img/me.jpg">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="80">
+
+  <div id="app" v-if="message.Curriculum">
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Curriculum</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#sobremi">Sobre mi</a>
+            <a v-if="ingles" class="nav-link" href="#sobremi">About me</a>
+          </li>
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#experiencia">Experiencia</a>
+            <a v-if="ingles" class="nav-link" href="#experiencia">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#estudios">Estudios</a>
+            <a v-if="ingles" class="nav-link" href="#estudios">Education</a>
+          </li>
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#destrezas">Destrezas</a>
+            <a v-if="ingles" class="nav-link" href="#destrezas">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#proyectos">Proyectos</a>
+            <a v-if="ingles" class="nav-link" href="#proyectos">Developed projects</a>
+          </li>
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#idiomas">Idiomas</a>
+            <a v-if="ingles" class="nav-link" href="#idiomas">Languages</a>
+          </li>
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#referencias">Referencias</a>
+            <a v-if="ingles" class="nav-link" href="#referencias">References</a>
+          </li>
+          <li class="nav-item">
+            <a v-if="!ingles" class="nav-link" href="#contacto">Contacto</a>
+            <a v-if="ingles" class="nav-link" href="#contacto">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a v-if="!ingles" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Cambiar idioma
+            </a>
+            <a v-if="ingles" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Change language
+            </a>
+            <div class="dropdown-menu p-0">
+              <button v-on:click="cambiarEspanol" class="dropdown-item" type="button">Español</button>
+              <button v-on:click="cambiarIngles" class="dropdown-item" type="button">Ingles</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div v-if="preload" class="preload">
+      <img src="./img/preload.gif" class="imgPreload" alt="Preload">
+    </div>
+    <div v-if="!preload" class="contenido">
+      {{iniciarArrays()}}
+
+      <h1>Curriculum vitae</h1>
+      <transition appear appear-active-class="animated  zoomInUp">
+        <section>
+          <h2 id="sobremi" v-if="!ingles">Sobre mi</h2>
+          <h2 id="sobremi" v-if="ingles">About me</h2>
+
+          <div id="Sobre-mi">
+            <div class="container-sobremi">
+              <div class="container-texto">
+                <p v-if="!ingles">Nombre: <span>{{message.Curriculum.Sobremi.nombre}}</span></p>
+                <p v-if="ingles">Name: <span>{{message.Curriculum.Sobremi.nombre}}</span></p>
+
+                <p v-if="!ingles">Apellidos: <span>{{message.Curriculum.Sobremi.apellidos}}</span></p>
+                <p v-if="ingles">Surname: <span>{{message.Curriculum.Sobremi.apellidos}}</span></p>
+
+                <p v-if="!ingles">Nacionalidad: <span>{{message.Curriculum.Sobremi.nacionalidad}}</span></p>
+                <p v-if="ingles">Nationality: <span>{{message.Curriculum.Sobremi.nationality}}</span></p>
+
+                <p v-if="!ingles">Fecha de nacimiento: <span>{{message.Curriculum.Sobremi.nacimiento}}</span></p>
+                <p v-if="ingles">Date of birth: <span>{{message.Curriculum.Sobremi.nacimiento}}</span></p>
+              </div>
+              <div class="container-foto">
+                <img src="./img/me.jpg" class="imgFoto" alt="Foto Curriculum">
+              </div>
+            </div>
+            <p v-if="!ingles">Dirección: <span>{{message.Curriculum.Sobremi.direccion}}</span></p>
+            <p v-if="ingles">Address: <span>{{message.Curriculum.Sobremi.address}}</span></p>
+
+            <p v-if="!ingles">Correo: <span>{{message.Curriculum.Sobremi.correo}}</span></p>
+            <p v-if="ingles">E-mail: <span>{{message.Curriculum.Sobremi.correo}}</span></p>
+
+            <p v-if="!ingles">Telefono: <span>{{message.Curriculum.Sobremi.telefono}}</span></p>
+            <p v-if="ingles">Phone: <span>{{message.Curriculum.Sobremi.telefono}}</span></p>
+
+            <p v-if="!ingles">Redes: <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.twitter"><i data-toggle="tooltip" data-placement="bottom" title="Twitter" class="fa fa-twitter"></i></a>
+              <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.insta"><i data-toggle="tooltip" data-placement="bottom" title="Instagram" class="fa fa-instagram"></i></a>
+              <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.github"><i data-toggle="tooltip" data-placement="bottom" title="GitHub" class="fa fa-github"></i></a>
+              <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.linkedin"><i data-toggle="tooltip" data-placement="bottom" title="Linkedin" class="fa fa-linkedin"></i></a>
+            </p>
+            <p v-if="ingles">Social networks: <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.twitter"><i data-toggle="tooltip" data-placement="bottom" title="Twitter" class="fa fa-twitter"></i></a>
+              <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.insta"><i data-toggle="tooltip" data-placement="bottom" title="Instagram" class="fa fa-instagram"></i></a>
+              <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.github"><i data-toggle="tooltip" data-placement="bottom" title="GitHub" class="fa fa-github"></i></a>
+              <a target="_blank" class="icono" :href="message.Curriculum.Sobremi.redes.linkedin"><i data-toggle="tooltip" data-placement="bottom" title="Linkedin" class="fa fa-linkedin"></i></a>
+            </p>
+
+            <p v-if="!ingles">Presentación: <span>{{message.Curriculum.Sobremi.presentacion}}</span></p>
+            <p v-if="ingles">Presentation: <span>{{message.Curriculum.Sobremi.presentation}}</span></p>
+          </div>
+
+        </section>
+      </transition>
+      <transition appear appear-active-class="animated  zoomInUp">
+        <section>
+          <h2 v-if="!ingles" id="experiencia">Experiencia profesional</h2>
+          <h2 v-if="ingles" id="experiencia">Work experience</h2>
+
+          <div class="Experiencia" v-for="(trabajo,index) in listaTrabajos">
+            <h4 v-if="!ingles">Puesto: <span>{{trabajo.puesto}}</span></h4>
+            <h4 v-if="ingles">Job: <span>{{trabajo.job}}</span></h4>
+
+            <p v-if="!ingles">Fecha inicio: <span>{{trabajo.fechainicio}}</span></p>
+            <p v-if="ingles">Start date: <span>{{trabajo.fechainicio}}</span></p>
+
+            <p v-if="!ingles">Fecha fin: <span>{{trabajo.fechafin}}</span></p>
+            <p v-if="ingles">End date: <span>{{trabajo.fechafin}}</span></p>
+
+            <p v-if="!ingles">Descripción: <span>{{trabajo.descripcion}}</span></p>
+            <p v-if="ingles">Description: <span>{{trabajo.description}}</span></p>
+          </div>
+        </section>
+      </transition>
+      <section>
+        <h2 v-if="!ingles" id="estudios">Estudios</h2>
+        <h2 v-if="ingles" id="estudios">Education</h2>
+        <div class="Educacion">
+          <table>
+            <tr>
+              <th v-if="!ingles">Titulo</th>
+              <th v-if="ingles">Title</th>
+
+              <th v-if="!ingles">Fecha obtencion</th>
+              <th v-if="ingles">Obtaining date</th>
+
+              <th v-if="!ingles">Lugar</th>
+              <th v-if="ingles">Place</th>
+            </tr>
+            <tr v-for="(estudio,index) in listaEstudios">
+              <td>{{estudio.nombre}}</td>
+              <td>{{estudio.fecha}}</td>
+              <td>{{estudio.lugar}}</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 v-if="!ingles" id="destrezas">Destrezas</h2>
+        <h2 v-if="ingles" id="destrezas">Skills</h2>
+        <div class="Destrezas">
+          <ul>
+            <li v-for="(destreza,index) in listaDestrezas">
+              <span v-if="!ingles">{{destreza.habilidad}}</span>
+              <span v-if="ingles">{{destreza.skill}}</span>
+            </li>
+            <li>
+              <span v-if="!ingles"> Lenguajes de programación: {{message.Curriculum.lenguajes.lenguajes}}</span>
+              <span v-if="ingles"> Programming languages: {{message.Curriculum.lenguajes.lenguajes}}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 v-if="!ingles" id="proyectos">Proyectos desarrollados</h2>
+        <h2 v-if="ingles" id="proyectos">Developed projects</h2>
+        <div class="Proyectos">
+          <div class="card" v-for="(proyecto,index) in listaProyectos" data-toggle="tooltip" data-placement="bottom" :title="proyecto.proyecto">
+            <img :src="proyecto.img" class="card-img-top" alt="Imagen del proyecto">
+            <div class="card-body">
+              <h5 class="card-title">{{proyecto.proyecto}}</h5>
+              <button class="btn btn-primary btnCard" v-on:click="openModal(index)" v-if="!ingles">Ver detalles</button>
+              <button class="btn btn-primary btnCard" v-on:click="openModal(index)" v-if="ingles">See details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 v-if="!ingles" id="idiomas">Idiomas</h2>
+        <h2 v-if="ingles" id="idiomas">Languages</h2>
+        <div class="Idiomas" v-for="(idioma,index) in listaIdiomas">
+          <p v-if="!ingles">Idioma: <span>{{idioma.lenguaje}}</span></p>
+          <p v-if="ingles">Language: <span>{{idioma.language}}</span></p>
+
+          <p v-if="!ingles">Nivel: <span>{{idioma.nivel}}</span></p>
+          <p v-if="ingles">Level: <span>{{idioma.level}}</span></p>
+          <div class="progress-bar" role="progressbar" :style="'width:' + idioma.porcentaje +'%'" aria-valuenow=20 aria-valuemin="0" aria-valuemax="100">{{idioma.porcentaje}}%</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 v-if="!ingles" id="referencias">Referencias</h2>
+        <h2 v-if="ingles" id="referencias">References</h2>
+        <div class="Referencias">
+          <div class="card cardReferencia" v-for="(referencia,index) in listaReferencias">
+            <div class="card-body bodyReferencia">
+              <h5 class="card-title">{{referencia.empresa}}</h5>
+              <p v-if="!ingles" class="card-text">{{referencia.testimonio}}</p>
+              <p v-if="ingles" class="card-text">{{referencia.testimonioingles}}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 v-if="!ingles">Contacto</h2>
+        <h2 v-if="ingles">Contact</h2>
+        <div class="Contacto" id="contacto">
+          <section class="form">
+            <div class="form-container">
+              <form id="formulario" action="">
+                <p v-if="!ingles">Nombre:</p>
+                <p v-if="ingles">Name:</p>
+                <input v-if="!ingles" placeholder="Nombre" id="input-name" type="text" class="field">
+                <input v-if="ingles" placeholder="Name" id="input-name" type="text" class="field">
+
+                <p v-if="!ingles">Correo electrónico:</p>
+                <p v-if="ingles">E-mail:</p>
+                <input v-if="ingles" placeholder="E-mail" id="input-email" type="text" class="field">
+                <input v-if="!ingles" placeholder="Correo electrónico" id="input-email" type="text" class="field">
+
+                <p v-if="!ingles">Teléfono:</p>
+                <p v-if="ingles">Phone number:</p>
+                <input v-if="!ingles" placeholder="Teléfono" id="input-telefono" type="text" class="field">
+                <input v-if="ingles" placeholder="Phone number" id="input-telefono" type="text" class="field">
+
+                <p v-if="!ingles">Mensaje:</p>
+                <p v-if="ingles">Message:</p>
+                <textarea v-if="!ingles" placeholder="Tu mensaje de contacto" id="input-mensaje" rows="10"></textarea>
+                <textarea v-if="ingles" placeholder="Your contact message" id="input-mensaje" rows="10"></textarea>
+
+                <p class="center-content">
+                  <input v-if="!ingles" id="btn-submit" type="submit" class="btn btn-success btn-hero btn-lg btn-form" value="ENVIAR">
+                  <input v-if="ingles" id="btn-submit" type="submit" class="btn btn-success btn-hero btn-lg btn-form" value="SEND">
+                </p>
+              </form>
+            </div>
+          </section>
+        </div>
+      </section>
+      <div class="modal" id="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header" id="modal-header">
+              <h5 class="modal-title" id="modalTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p v-if="!ingles" id="descripcionParrafo"></p>
+              <p v-if="ingles" id="descriptionParrafo"></p>
+              <div class="tecnologies">
+                <img id="imgProyectoModal" class="imgProyectoModal" alt="Imagen del proyecto en el modal">
+                <h5 v-if="!ingles">Tecnologías empleadas</h5>
+                <h5 v-if="ingles">Technologies used</h5>
+                <ul class="tecnologiasEmpleadas">
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <a v-if="!ingles" id="linkProdu" target="_blank"><button type="button" class="btn btn-primary">Producción</button></a>
+              <a v-if="!ingles" id="linkRepo" target="_blank"><button type="button" class="btn btn-primary">Repositorio</button></a>
+
+              <a v-if="ingles" id="linkProdu" target="_blank"><button type="button" class="btn btn-primary">Production</button></a>
+              <a v-if="ingles" id="linkRepo" target="_blank"><button type="button" class="btn btn-primary">Repository</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footer-company-name">© Rafael Salmerón Martos</p>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
