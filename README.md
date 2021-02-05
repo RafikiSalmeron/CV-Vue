@@ -15,10 +15,10 @@ Curriculum vitae rellenado y maquetado con Vue, disponible en dos idiomas (InglÃ
 
 
 <h3> Curriculum </h3>
-(https://rafikisalmeron.github.io/LandingPage/)
+(https://rafikisalmeron.github.io/CV-Vue/)
 
 <h3> Proyecto GitHub </h3>
-(https://github.com/RafikiSalmeron/LandingPage)
+(https://github.com/RafikiSalmeron/CV-Vue)
 
 
 <h2> RAFAEL SALMERÃ“N MARTOS </h2>
